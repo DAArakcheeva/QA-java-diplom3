@@ -6,27 +6,28 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class WebDrivers {
 
-    public static WebDriver getWebDriver(String browserName) {
-        System.setProperty("webdriver.chrome.driver", "C:\\WebDriver\\bin\\chromedriver.exe");
-        ChromeOptions options = new ChromeOptions();
-        WebDriver driver;
+    private static WebDriver driver;
 
-        switch (browserName) {
-            case "chrome":
-                options.setBinary("C:\\chrome-win64 (3)\\chrome-win64\\chrome.exe");
-                driver = new ChromeDriver(options);
-                break;
+    public static WebDriver getDriver() {
+        if (driver == null) {
+            String browser = System.getProperty("browser");
 
-            case "yandex":
-                driver = new ChromeDriver(options.setBinary("C:\\Program Files (x86)\\Yandex\\YandexBrowser\\Application\\browser.exe"));
-                break;
+            switch (browser.toLowerCase()) {
+                case "chrome":
+                    System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver.exe");
+                    driver = new ChromeDriver();
+                    break;
+                case "yandex":
+                    System.setProperty("webdriver.chrome.driver", "./src/test/resources/yandexdriver.exe");
+                    driver = new ChromeDriver();
+                    break;
+                default:
+                    throw new RuntimeException("Unsupported browser: " + browser);
+            }
 
-            default:
-                throw new RuntimeException("Incorrect browser name");
+            // Максимизация окна браузера
+            driver.manage().window().maximize();
         }
-
-        // Максимизировать окно браузера
-        driver.manage().window().maximize();
 
         return driver;
     }

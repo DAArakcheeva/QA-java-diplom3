@@ -1,6 +1,6 @@
-import PageObjects.ForgotPass;
-import PageObjects.Login;
-import PageObjects.Main;
+import pages.ForgotPass;
+import pages.Login;
+import pages.Main;
 import handlers.StellarBurgersEndpoints;
 import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;
@@ -11,13 +11,14 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 
-import static handlers.WebDrivers.getWebDriver;
+import static handlers.WebDrivers.getDriver;
 
 @RunWith(Parameterized.class)
-public class LoginTest {
+public class LoginTest extends BaseTest {
 
     private WebDriver driver;
-    private String browserName;
+    private final String browserName;
+    private User user;
     private final static String EMAIL = "arakcheeva-dasha@yandex.ru";
     private final static String PASSWORD = "123456789";
 
@@ -28,15 +29,19 @@ public class LoginTest {
                 {"yandex"},
         };
     }
+
     public LoginTest(String browserName) {
         this.browserName = browserName;
     }
+
     @Before
     @Step("Запуск браузера")
     public void startUp() {
-        driver = getWebDriver(browserName);
+        System.setProperty("browser", browserName);
+        driver = getDriver();
         driver.get(StellarBurgersEndpoints.MAIN_PAGE);
     }
+
     @Test
     @DisplayName("Вход по кнопке 'Войти в аккаунт'.")
     public void enterByLoginButtonTest() {

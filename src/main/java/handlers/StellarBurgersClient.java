@@ -3,6 +3,8 @@ package handlers;
 import io.qameta.allure.Step;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
@@ -53,12 +55,20 @@ public class StellarBurgersClient {
                 .auth().oauth2(token)
                 .delete(StellarBurgersEndpoints.DELETE_USER_ENDPOINT);
     }
-    @Step("Обновление данных пользователя")
+    @Step("Удаление тестового пользователя")
     public void deleteTestUser(String email, String password) {
         Response response = loginUser(email, password);
 
-        if (response.getStatusCode() != 200) return;
+        if (response.getStatusCode() != 200) {
+            return; // Выход, если вход не удался
+        }
 
+        // Извлекаем токен из тела ответа после удачного входа
+        JsonPath jsonPathEvaluator = response.jsonPath();
+        String accessToken = jsonPathEvaluator.getString("accessToken");
+
+        // Удаляем пользователя, используя полученный токен
+        deleteUser(accessToken);
     }
     @Step("Изменение пользователя")
     public ValidatableResponse updateUser(UserCredentials originalUser, UserCredentials updatedUser, String token) {
@@ -73,14 +83,16 @@ public class StellarBurgersClient {
                 .log().all();
     }
     @Step("Оформление заказа")
-    public ValidatableResponse createOrder(String ingredient) {
+    public ValidatableResponse createOrder(Order order, String token) {
         return given()
-                .log().all()
+                .contentType(ContentType.JSON)
+                .header("Authorization", token)
                 .baseUri(BASE_URL)
-                .header("Content-type", "application/json")
-                .body("{\n \"ingredients\": [\"" + ingredient + "\"] \n}")
+                .body(order)
+                .when()
                 .post("/api/orders")
-                .then().log().all();
+                .then()
+                .log().all();
     }
     @Step("Отправка заказа с некорректными компонентами")
     public ValidatableResponse createOrderWithNoIngredients(String ingredient) {

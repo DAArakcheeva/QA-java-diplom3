@@ -1,4 +1,5 @@
-import PageObjects.Main;
+import handlers.User;
+import pages.Main;
 import handlers.StellarBurgersEndpoints;
 import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;
@@ -9,27 +10,34 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 
-import static handlers.WebDrivers.getWebDriver;
+import java.lang.reflect.Method;
+
+import static handlers.WebDrivers.getDriver;
 
 @RunWith(Parameterized.class)
-public class ConstructorTest {
+public class ConstructorTest extends BaseTest {
 
     private WebDriver driver;
-    private String browserName;
-    @Parameterized.Parameters(name="Browser {0}")
+    private final String browserName;
+    private User user;
+
+    @Parameterized.Parameters(name = "Browser {0}")
     public static Object[][] initParams() {
         return new Object[][]{
                 {"chrome"},
-                {"yandex"},
+                {"yandex"}
         };
     }
-    public ConstructorTest(String browserName){
+
+    public ConstructorTest(String browserName) {
         this.browserName = browserName;
     }
+
     @Before
     @Step("Запуск браузера")
     public void startUp() {
-        driver = getWebDriver(browserName);
+        System.setProperty("browser", browserName);
+        driver = getDriver();
         driver.get(StellarBurgersEndpoints.MAIN_PAGE);
     }
 
