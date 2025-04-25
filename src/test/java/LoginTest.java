@@ -1,3 +1,4 @@
+import handlers.User;
 import pages.ForgotPass;
 import pages.Login;
 import pages.Main;
