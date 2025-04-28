@@ -4,20 +4,61 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c64bfcb3-b380-4390-bacb-4bd669e05349" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="c64bfcb3-b380-4390-bacb-4bd669e05349" name="Changes" comment="fix+ develop3">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/chromedriver_test.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/StellarBurgersClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handlers/StellarBurgersClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/WebDrivers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handlers/WebDrivers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ForgotPass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ForgotPass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/Registration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ConstructorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ConstructorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MainPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/RegistrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RegistrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/chromedriver" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/yandexdriver" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop3" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;DAArakcheeva&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:DAArakcheeva/QA-java-diplom3.git&quot;,
+    &quot;accountId&quot;: &quot;034e5877-a064-4495-a822-f5a45aa2d2f8&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2vywzyudNIWfWcqCgyNkNPBSSyd" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -26,12 +67,104 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.ConstructorTest.executor": "Run",
+    "Application.LoginTest.executor": "Run",
+    "Application.WebDrivers.executor": "Run",
+    "JUnit.ConstructorTest.executor": "Run",
+    "JUnit.ConstructorTest.transitionToBunsInConstructorTest.executor": "Run",
+    "JUnit.LoginTest.enterByLoginButtonTest.executor": "Run",
+    "JUnit.LoginTest.enterByPasswordRecoveryFormatTest.executor": "Run",
+    "JUnit.LoginTest.enterByRegistrationFormTest.executor": "Run",
+    "JUnit.LoginTest.executor": "Run",
+    "JUnit.MainPageTest.executor": "Run",
+    "JUnit.MainPageTest.exitFromProfileTest.executor": "Run",
+    "JUnit.MainPageTest.toStellarBurgersFromProfilePageTest.executor": "Run",
+    "JUnit.RegistrationTest.executor": "Run",
+    "Maven.QA-java-diplom3 [clean,install].executor": "Run",
+    "Maven.QA-java-diplom3 [clean,test].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "#1 on develop3",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/cygwin64/chrome-win64",
     "onboarding.tips.debug.path": "C:/cygwin64/home/Cleme/Diplom/QA-java-diplom3/src/main/java/org/example/Main.java"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\cygwin64\home\Cleme\Diplom_Daria_Arakcheeva_43\QA-java-diplom3\src\test\resources" />
+      <recent name="C:\cygwin64\home\Cleme\Diplom_Daria_Arakcheeva_43\QA-java-diplom3\src\test" />
+      <recent name="C:\cygwin64\home\Cleme\Diplom_Daria_Arakcheeva_43\QA-java-diplom3\src\main\resources" />
+      <recent name="C:\cygwin64\chrome-win64" />
+      <recent name="C:\cygwin64\home\Cleme\Diplom_Daria_Arakcheeva_43\QA-java-diplom3\src\main\resources\binaries" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="handlers" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean test" />
+      <command value="mvn clean install" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.ConstructorTest">
+    <configuration name="ConstructorTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ConstructorTest" />
+      <module name="QA-java-diplom3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LoginTest" />
+      <module name="QA-java-diplom3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebDrivers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="handlers.WebDrivers" />
+      <module name="QA-java-diplom3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="handlers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConstructorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="QA-java-diplom3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ConstructorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConstructorTest.transitionToBunsInConstructorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="QA-java-diplom3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ConstructorTest" />
+      <option name="METHOD_NAME" value="transitionToBunsInConstructorTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ConstructorTest" />
+        <item itemvalue="Application.LoginTest" />
+        <item itemvalue="JUnit.ConstructorTest.transitionToBunsInConstructorTest" />
+        <item itemvalue="Application.WebDrivers" />
+        <item itemvalue="JUnit.ConstructorTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -41,15 +174,61 @@
       <option name="presentableId" value="Default" />
       <updated>1745130891960</updated>
     </task>
+    <task id="LOCAL-00001" summary="commit develop3">
+      <option name="closed" value="true" />
+      <created>1745323613871</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1745323613873</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix develop3">
+      <option name="closed" value="true" />
+      <created>1745624551493</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1745624551493</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix+ develop3">
+      <option name="closed" value="true" />
+      <created>1745624684709</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1745624684709</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit develop3" />
+    <MESSAGE value="fix develop3" />
+    <MESSAGE value="fix+ develop3" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix+ develop3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/BaseTest.java</url>
+          <line>24</line>
+          <properties class="BaseTest" method="tearDown">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
