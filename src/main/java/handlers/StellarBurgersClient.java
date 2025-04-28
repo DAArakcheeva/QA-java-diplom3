@@ -18,7 +18,7 @@ public class StellarBurgersClient {
             "}";
 
     @Step("Регистрация нового пользователя")
-    public ValidatableResponse createUser(UserCredentials user) {
+    public static ValidatableResponse createUser(User user) {
         return given()
                 .log()
                 .all()

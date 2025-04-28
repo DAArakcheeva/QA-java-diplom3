@@ -59,7 +59,7 @@ public class Login {
 
     // Ожидание загрузки страницы входа
     public void waitForLoadEntrance() { // ожидание загрузки страницы "вход"
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
                 .until(ExpectedConditions.visibilityOfElementLocated(entrance));
     }
 

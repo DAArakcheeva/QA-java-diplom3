@@ -1,43 +1,20 @@
-import handlers.User;
 import pages.Main;
 import handlers.StellarBurgersEndpoints;
 import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;
-import org.junit.After;
+
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 
-import java.lang.reflect.Method;
-
-import static handlers.WebDrivers.getDriver;
-
-@RunWith(Parameterized.class)
 public class ConstructorTest extends BaseTest {
 
     private WebDriver driver;
-    private final String browserName;
-    private User user;
-
-    @Parameterized.Parameters(name = "Browser {0}")
-    public static Object[][] initParams() {
-        return new Object[][]{
-                {"chrome"},
-                {"yandex"}
-        };
-    }
-
-    public ConstructorTest(String browserName) {
-        this.browserName = browserName;
-    }
 
     @Before
     @Step("Запуск браузера")
     public void startUp() {
-        System.setProperty("browser", browserName);
-        driver = getDriver();
+        driver = getDriver(); // получаем драйвер, заданный внешними параметрами
         driver.get(StellarBurgersEndpoints.MAIN_PAGE);
     }
 
@@ -66,8 +43,5 @@ public class ConstructorTest extends BaseTest {
         main.checkToppingFillings();
     }
 
-    @After
-    public void tearDown() {
-        driver.quit();
-    }
+
 }

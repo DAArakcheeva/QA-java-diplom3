@@ -47,7 +47,7 @@ public class Main {
 
     public void clickOnLoginButton() {
         // Ждем исчезновение модала
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
                 .until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//div[starts-with(@class, 'Modal_modal_overlay')]")));
 
         // Пытаемся совершить обычный клик
@@ -63,7 +63,7 @@ public class Main {
 
     public void clickOnAccountButton() {
         // Ждем исчезновение модала
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
                 .until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//div[starts-with(@class, 'Modal_modal_overlay')]")));
 
         // Пытаемся совершить обычный клик
@@ -79,7 +79,7 @@ public class Main {
 
     public void clickOnLogo() {
         // Ждем исчезновение модала
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
                 .until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//div[starts-with(@class, 'Modal_modal_overlay')]")));
 
         // Пытаемся совершить обычный клик
@@ -95,7 +95,7 @@ public class Main {
 
     public void clickOnConstructorButton() {
         // Ждем исчезновение модала
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
                 .until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//div[starts-with(@class, 'Modal_modal_overlay')]")));
 
         // Пытаемся совершить обычный клик
@@ -111,7 +111,7 @@ public class Main {
 
     public void clickOnBunsButton() {
         // Ждем исчезновение модала
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
                 .until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//div[starts-with(@class, 'Modal_modal_overlay')]")));
 
         // Пытаемся совершить обычный клик
@@ -126,7 +126,7 @@ public class Main {
 
     public void clickOnSaucesButton() {
         // Ждем исчезновение модала
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
                 .until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//div[starts-with(@class, 'Modal_modal_overlay')]")));
 
         // Пытаемся совершить обычный клик
@@ -141,7 +141,7 @@ public class Main {
 
     public void clickOnFillingButton() {
         // Ждем исчезновение модала
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
                 .until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//div[starts-with(@class, 'Modal_modal_overlay')]")));
 
         // Пытаемся совершить обычный клик
@@ -170,38 +170,38 @@ public class Main {
     }
 
     public void waitForLoadMainPage() {
-        new WebDriverWait(driver, Duration.ofSeconds(20))
+        new WebDriverWait(driver, Duration.ofSeconds(20).getSeconds())
                 .until(ExpectedConditions.visibilityOfElementLocated(textBurgerMainPage));
     }
 
     public void waitForLoadBunsHeader() {
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
                 .until(ExpectedConditions.visibilityOfElementLocated(bunsImg));
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
                 .until(ExpectedConditions.visibilityOfElementLocated(bunsText));
     }
 
     public void waitForLoadSaucesHeader() {
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
                 .until(ExpectedConditions.visibilityOfElementLocated(saucesImg));
         waitDocReady();
     }
 
     public void waitForLoadFillingsHeader() {
-        new WebDriverWait(driver, Duration.ofSeconds(3))
+        new WebDriverWait(driver, Duration.ofSeconds(3).getSeconds())
                 .until(ExpectedConditions.visibilityOfElementLocated(fillingsImg));
         waitDocReady();
     }
 
     public void waitForInvisibilityLoadingAnimation() {
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
                 .until(ExpectedConditions.invisibilityOfElementLocated
                         (By.xpath(".//img[@src='./static/media/loading.89540200.svg' and @alt='loading animation']")));
         waitDocReady();
     }
 
     public void waitDocReady() {
-        new WebDriverWait(driver, Duration.ofSeconds(20))
+        new WebDriverWait(driver, Duration.ofSeconds(20).getSeconds())
                 .until((ExpectedCondition<Boolean>) wd ->
                         ((JavascriptExecutor) wd)
                                 .executeScript("return document.readyState")
@@ -209,11 +209,11 @@ public class Main {
     }
 
     private WebElement waitForElementToBeClickable(By locator) {
-        return new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(locator));
+        return new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds()).until(ExpectedConditions.elementToBeClickable(locator));
     }
 
     private WebElement waitForElementToBeVisible(By locator) {
-        return new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOfElementLocated(locator));
+        return new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds()).until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
 }

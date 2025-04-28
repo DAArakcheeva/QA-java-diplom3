@@ -46,19 +46,19 @@ public class Registration {
 
     // Ожидание кликабельности кнопки
     private void waitButtonIsClickable() {
-        new WebDriverWait(driver, Duration.ofSeconds(3))
+        new WebDriverWait(driver, Duration.ofSeconds(3).getSeconds())
                 .until(ExpectedConditions.invisibilityOf(driver.findElement(regTitle)));
     }
 
     // Ожидание успешной отправки формы
     public void waitFormSubmitted(String expectedTitle) {
-        new WebDriverWait(driver, Duration.ofSeconds(3))
+        new WebDriverWait(driver, Duration.ofSeconds(3).getSeconds())
                 .until(ExpectedConditions.textToBe(regTitle, expectedTitle));
     }
 
     // Ожидание появления ошибки
     public void waitErrorIsVisible() {
-        new WebDriverWait(driver, Duration.ofSeconds(3))
+        new WebDriverWait(driver, Duration.ofSeconds(3).getSeconds())
                 .until(ExpectedConditions.visibilityOf(driver.findElement(errorMessage)));
     }
 
@@ -77,7 +77,7 @@ public class Registration {
 
     // Ожидание загрузки страницы регистрации
     public void waitForLoadRegisterPage() {
-        new WebDriverWait(driver, Duration.ofSeconds(3))
+        new WebDriverWait(driver, Duration.ofSeconds(3).getSeconds())
                 .until(ExpectedConditions.visibilityOfElementLocated(registerText));
     }
 

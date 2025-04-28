@@ -5,42 +5,21 @@ import pages.Profile;
 import handlers.StellarBurgersEndpoints;
 import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 
-import static handlers.WebDrivers.getDriver;
 
-@RunWith(Parameterized.class)
 public class MainPageTest extends BaseTest{
 
     private WebDriver driver;
-    private final String browserName;
     private User user;
-    private final static String EMAIL = "arakcheeva-dasha@yandex.ru";
-    private final static String PASSWORD = "123456789";
-
-    @Parameterized.Parameters(name = "Browser {0}")
-    public static Object[][] initParams() {
-        return new Object[][]{
-                {"chrome"},
-                {"yandex"},
-        };
-    }
-
-    public MainPageTest(String browserName) {
-        this.browserName = browserName;
-    }
 
     @Before
     @Step("Запуск браузера")
     public void startUp() {
-        System.setProperty("browser", browserName);
-        driver = getDriver();
+        driver = getDriver(); // получаем драйвер, заданный внешними параметрами
         driver.get(StellarBurgersEndpoints.MAIN_PAGE);
     }
 
@@ -86,7 +65,7 @@ public class MainPageTest extends BaseTest{
         main.clickOnAccountButton();
         Login login = new Login(driver);
         login.waitForLoadEntrance();
-        login.authorization(EMAIL, PASSWORD);
+        login.authorization(user.getEmail(), user.getPassword());
         main.waitForLoadMainPage();
         main.clickOnAccountButton();
         Profile profilePage = new Profile(driver);
@@ -96,8 +75,4 @@ public class MainPageTest extends BaseTest{
         Assert.assertTrue("Не удалось выйти", driver.findElement(login.entrance).isDisplayed());
     }
 
-    @After
-    public void teardown() {
-        driver.quit();
-    }
 }

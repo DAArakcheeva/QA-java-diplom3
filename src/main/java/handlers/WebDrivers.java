@@ -1,34 +1,31 @@
 package handlers;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+
 
 public class WebDrivers {
 
-    private static WebDriver driver;
+    protected WebDriver driver;
 
-    public static WebDriver getDriver() {
-        if (driver == null) {
-            String browser = System.getProperty("browser");
+    public static void main(String[] args) {
+        WebDrivers app = new WebDrivers();
+        app.setup(); // Вызываем метод setup для инициализации драйвера и открытия URL
+    }
 
-            switch (browser.toLowerCase()) {
-                case "chrome":
-                    System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver.exe");
-                    driver = new ChromeDriver();
-                    break;
-                case "yandex":
-                    System.setProperty("webdriver.chrome.driver", "./src/test/resources/yandexdriver.exe");
-                    driver = new ChromeDriver();
-                    break;
-                default:
-                    throw new RuntimeException("Unsupported browser: " + browser);
-            }
+    public void setup() {
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
 
-            // Максимизация окна браузера
-            driver.manage().window().maximize();
-        }
+        // Остальные настройки
+        driver.manage().window().maximize(); // Разворачиваем окно браузера на полный экран
+        driver.get("https://stellarburgers.nomoreparties.site/");
+    }
 
+    public WebDriver getDriver() {
         return driver;
     }
+
+
 }

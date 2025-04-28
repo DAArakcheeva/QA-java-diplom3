@@ -24,12 +24,12 @@ public class Profile {
 
     // Ожидание видимости активной ссылки профиля
     public void waitAuthFormVisible() {
-        new WebDriverWait(driver, Duration.ofSeconds(30))
+        new WebDriverWait(driver, Duration.ofSeconds(30).getSeconds())
                 .until(ExpectedConditions.visibilityOfElementLocated(profileNavLink));
     }
 
     public void waitButtonIsClickable() {
-        new WebDriverWait(driver, Duration.ofSeconds(10))
+        new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
                 .until(ExpectedConditions.invisibilityOf(driver.findElement(modalOverlay)));
     }
 
@@ -41,7 +41,7 @@ public class Profile {
 
     // Ожидание загрузки страницы профиля
     public void waitForLoadProfilePage() {
-        new WebDriverWait(driver, Duration.ofSeconds(3))
+        new WebDriverWait(driver, Duration.ofSeconds(3).getSeconds())
                 .until(ExpectedConditions.visibilityOfElementLocated(textOnProfilePage));
     }
 }

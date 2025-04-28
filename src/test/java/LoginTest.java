@@ -1,4 +1,6 @@
+import handlers.StellarBurgersClient;
 import handlers.User;
+import handlers.UserCredentials;
 import pages.ForgotPass;
 import pages.Login;
 import pages.Main;
@@ -8,87 +10,69 @@ import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 
-import static handlers.WebDrivers.getDriver;
 
-@RunWith(Parameterized.class)
 public class LoginTest extends BaseTest {
 
     private WebDriver driver;
-    private final String browserName;
     private User user;
-    private final static String EMAIL = "arakcheeva-dasha@yandex.ru";
-    private final static String PASSWORD = "123456789";
-
-    @Parameterized.Parameters(name="Browser {0}")
-    public static Object[][] initParams() {
-        return new Object[][]{
-                {"chrome"},
-                {"yandex"},
-        };
-    }
-
-    public LoginTest(String browserName) {
-        this.browserName = browserName;
-    }
 
     @Before
     @Step("Запуск браузера")
     public void startUp() {
-        System.setProperty("browser", browserName);
-        driver = getDriver();
-        driver.get(StellarBurgersEndpoints.MAIN_PAGE);
+        driver = getDriver(); // получаем драйвер, заданный внешними параметрами
+        driver.get(StellarBurgersEndpoints.MAIN_PAGE); // переходим на главную страницу
     }
 
     @Test
-    @DisplayName("Вход по кнопке 'Войти в аккаунт'.")
+    @DisplayName("Вход по кнопке 'Войти в аккаунт'")
     public void enterByLoginButtonTest() {
         Main main = new Main(driver);
-        main.clickOnLoginButton();
+        main.clickOnLoginButton(); // нажимаем на кнопку "Войти в аккаунт"
         Login login = new Login(driver);
-        login.authorization(EMAIL, PASSWORD);
-        main.waitForLoadMainPage();
+        login.authorization(user.getEmail(), user.getPassword()); // вводим почту и пароль main.waitForLoadMainPage(); // ждем загрузки главной страницы
     }
 
     @Test
-    @DisplayName("вход через кнопку «Личный кабинет»")
+    @DisplayName("Вход через кнопку 'Личный кабинет'")
     public void enterByPersonalAccountButtonTest() {
         Main main = new Main(driver);
-        main.clickOnAccountButton();
+        main.clickOnAccountButton(); // нажимаем на кнопку "Личный кабинет"
         Login login = new Login(driver);
-        login.authorization(EMAIL, PASSWORD);
-        main.waitForLoadMainPage();
+        login.authorization(user.getEmail(), user.getPassword()); // вводим почту и пароль
+        main.waitForLoadMainPage(); // ждем загрузки главной страницы
     }
 
     @Test
-    @DisplayName("вход через кнопку в форме регистрации,")
+    @DisplayName("Вход через кнопку в форме регистрации")
     public void enterByRegistrationFormTest() {
         Main main = new Main(driver);
-        main.clickOnAccountButton();
+        main.clickOnAccountButton(); // нажимаем на кнопку "Личный кабинет"
         Login login = new Login(driver);
-        login.authorization(EMAIL, PASSWORD);
-        main.waitForLoadMainPage();
+        login.clickOnRegister(); // переходим в форму регистрации
+        login.authorization(user.getEmail(), user.getPassword()); // вводим почту и пароль
+        main.waitForLoadMainPage(); // ждем загрузки главной страницы
     }
+
     @Test
-    @DisplayName("Вход через кнопку в форме восстановления пароля.")
+    @DisplayName("Вход через кнопку в форме восстановления пароля")
     public void enterByPasswordRecoveryFormatTest() {
         Main main = new Main(driver);
-        main.clickOnAccountButton();
+        main.clickOnAccountButton(); // нажимаем на кнопку "Личный кабинет"
         Login login = new Login(driver);
-        login.clickOnForgotPasswordLink();
+        login.clickOnForgotPasswordLink(); // переходим в форму восстановления пароля
         ForgotPass password = new ForgotPass(driver);
-        password.waitForLoadedRecoverPassword();
-        password.clickOnLoginButton();
-        login.authorization(EMAIL, PASSWORD);
-        main.waitForLoadMainPage();
+        password.waitForLoadedRecoverPassword(); // ждем загрузки формы восстановления пароля
+        password.clickOnLoginButton(); // возвращаемся к форме входа
+        login.authorization(user.getEmail(), user.getPassword()); // вводим почту и пароль
+        main.waitForLoadMainPage(); // ждем загрузки главной страницы
     }
 
     @After
-    public void teardown() {
-        // Закрой браузер
-        driver.quit();
+    public void cleanUp() {
+        // Удаляем тестового пользователя через API
+        client.deleteTestUser(user.getEmail(), user.getPassword());
     }
+
 }

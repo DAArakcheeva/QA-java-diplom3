@@ -46,7 +46,7 @@ public class ForgotPass {
 
 
     private void waitButtonIsClickable() {
-        new WebDriverWait(driver, Duration.ofSeconds(3))
+        new WebDriverWait(driver, Duration.ofSeconds(5).getSeconds())
                 .until(ExpectedConditions.invisibilityOf(driver.findElement(modalOverlay)));
     }
 
@@ -58,7 +58,7 @@ public class ForgotPass {
 
     // Ждёт загрузки формы восстановления пароля
     public void waitForLoadedRecoverPassword() {
-        new WebDriverWait(driver, Duration.ofSeconds(3))
+        new WebDriverWait(driver, Duration.ofSeconds(5).getSeconds())
                 .until(ExpectedConditions.visibilityOfElementLocated(recoverPassword));
     }
 }
