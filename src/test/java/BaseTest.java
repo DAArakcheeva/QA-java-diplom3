@@ -1,9 +1,11 @@
+import handlers.Config;
 import handlers.StellarBurgersClient;
 import handlers.User;
 import handlers.WebDrivers;
 import io.qameta.allure.Step;
 import org.junit.After;
 import org.junit.Before;
+import org.openqa.selenium.WebDriver;
 
 import java.util.Random;
 
@@ -11,10 +13,16 @@ public class BaseTest extends WebDrivers {
 
     protected StellarBurgersClient client = new StellarBurgersClient();
     protected User user; // Хранение пользователя в базовом классе
+    private WebDriver driver;
+
+    public BaseTest() {
+        super(Config.getProperty("browser")); // Передаем имя браузера в конструктор родителя
+    }
 
     @Before
-    public void setupBeforeAllTests() {
-        setup(); // Настройка драйвера через WebDrivers
+    public void setUp() {
+        driver = getDriver(); // Получаем драйвер из родительского класса
+        driver.manage().window().maximize();
 
         // Генерация случайного пользователя перед каждым тестом
         user = generateRandomUser();
@@ -22,7 +30,7 @@ public class BaseTest extends WebDrivers {
     }
 
     @After
-    public void tearDown() {
+    public void tearDown () {
         if (this.driver != null) {
             this.driver.quit(); // Закрытие браузера
         }
@@ -38,5 +46,4 @@ public class BaseTest extends WebDrivers {
         user.setName("Test " + randNumber);
         return user;
     }
-
 }
