@@ -4,25 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c64bfcb3-b380-4390-bacb-4bd669e05349" name="Changes" comment="fix+ develop3">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/chromedriver_test.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="c64bfcb3-b380-4390-bacb-4bd669e05349" name="Changes" comment="commit №2 after review">
+      <change afterPath="$PROJECT_DIR$/src/main/java/handlers/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/StellarBurgersClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handlers/StellarBurgersClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/handlers/WebDrivers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handlers/WebDrivers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/ForgotPass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/ForgotPass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/Registration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ConstructorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ConstructorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MainPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainPageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/RegistrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RegistrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/chromedriver" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/yandexdriver" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +59,8 @@
     "Application.WebDrivers.executor": "Run",
     "JUnit.ConstructorTest.executor": "Run",
     "JUnit.ConstructorTest.transitionToBunsInConstructorTest.executor": "Run",
+    "JUnit.ConstructorTest.transitionToFillingsInConstructorTest.executor": "Run",
+    "JUnit.ConstructorTest.transitionToSaucesInConstructorTest.executor": "Run",
     "JUnit.LoginTest.enterByLoginButtonTest.executor": "Run",
     "JUnit.LoginTest.enterByPasswordRecoveryFormatTest.executor": "Run",
     "JUnit.LoginTest.enterByRegistrationFormTest.executor": "Run",
@@ -84,7 +73,7 @@
     "Maven.QA-java-diplom3 [clean,test].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "#1 on develop3",
+    "git-widget-placeholder": "develop3",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/cygwin64/chrome-win64",
     "onboarding.tips.debug.path": "C:/cygwin64/home/Cleme/Diplom/QA-java-diplom3/src/main/java/org/example/Main.java"
@@ -92,11 +81,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\cygwin64\chrome-win64" />
       <recent name="C:\cygwin64\home\Cleme\Diplom_Daria_Arakcheeva_43\QA-java-diplom3\src\test\resources" />
+      <recent name="C:\cygwin64\home\Cleme\Diplom_Daria_Arakcheeva_43\QA-java-diplom3\src\main" />
       <recent name="C:\cygwin64\home\Cleme\Diplom_Daria_Arakcheeva_43\QA-java-diplom3\src\test" />
       <recent name="C:\cygwin64\home\Cleme\Diplom_Daria_Arakcheeva_43\QA-java-diplom3\src\main\resources" />
-      <recent name="C:\cygwin64\chrome-win64" />
-      <recent name="C:\cygwin64\home\Cleme\Diplom_Daria_Arakcheeva_43\QA-java-diplom3\src\main\resources\binaries" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="handlers" />
@@ -108,34 +97,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.ConstructorTest">
-    <configuration name="ConstructorTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ConstructorTest" />
-      <module name="QA-java-diplom3" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoginTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LoginTest" />
-      <module name="QA-java-diplom3" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WebDrivers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="handlers.WebDrivers" />
-      <module name="QA-java-diplom3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="handlers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ConstructorTest.transitionToFillingsInConstructorTest">
     <configuration name="ConstructorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="QA-java-diplom3" />
       <option name="PACKAGE_NAME" value="" />
@@ -155,12 +117,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ConstructorTest.transitionToFillingsInConstructorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="QA-java-diplom3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ConstructorTest" />
+      <option name="METHOD_NAME" value="transitionToFillingsInConstructorTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConstructorTest.transitionToSaucesInConstructorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="QA-java-diplom3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ConstructorTest" />
+      <option name="METHOD_NAME" value="transitionToSaucesInConstructorTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="QA-java-diplom3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LoginTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ConstructorTest" />
-        <item itemvalue="Application.LoginTest" />
+        <item itemvalue="JUnit.ConstructorTest.transitionToFillingsInConstructorTest" />
+        <item itemvalue="JUnit.ConstructorTest.transitionToSaucesInConstructorTest" />
+        <item itemvalue="JUnit.LoginTest" />
         <item itemvalue="JUnit.ConstructorTest.transitionToBunsInConstructorTest" />
-        <item itemvalue="Application.WebDrivers" />
         <item itemvalue="JUnit.ConstructorTest" />
       </list>
     </recent_temporary>
@@ -198,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745624684709</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="commit №2 after review">
+      <option name="closed" value="true" />
+      <created>1745838349851</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1745838349852</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -216,21 +215,7 @@
     <MESSAGE value="commit develop3" />
     <MESSAGE value="fix develop3" />
     <MESSAGE value="fix+ develop3" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix+ develop3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/BaseTest.java</url>
-          <line>24</line>
-          <properties class="BaseTest" method="tearDown">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="commit №2 after review" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit №2 after review" />
   </component>
 </project>
